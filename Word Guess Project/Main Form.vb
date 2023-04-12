@@ -11,8 +11,11 @@ Public Class frmMain
     Private Sub btnNewWord_Click(sender As Object, e As EventArgs) Handles btnNewWord.Click
         ' Determine whether the word contains five letters.
 
-        If txtWord.Text.Trim.ToUpper Like Then
-
+        If txtWord.Text.Trim.ToUpper Like "[A-Z][A-Z][A-Z][A-Z][A-Z]" Then
+            grpWord.Enabled = False
+            grpLetter.Enabled = True
+            lblResult.Text = "_____"
+            txtLetter.Focus()
         Else
             MessageBox.Show("Please enter 5 letters.", "Guess the Word Game",
                             MessageBoxButtons.OK, MessageBoxIcon.Information)
